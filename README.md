@@ -1,4 +1,4 @@
-# Vivekananda Medical Trust (VMT)
+﻿# Vivekananda Medical Trust (VMT)
 > Website for Vivekananda Medical Test
 
 
@@ -8,7 +8,8 @@ Vivekananda Medical Trust was founded drawing inspiration from  Swamy Vivekanand
 
 
 ## Release History
-
+* 0.1.1
+    * Minor Desgin Change
 * 0.1.0
     * The first proper release
 * 0.0.1
