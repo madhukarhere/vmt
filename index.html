@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivekananda Diagnostics and Medical Research – Visakhapatnam</title>
+
+  <!-- Google Fonts: Poppins for headings, Lato for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome Icons (free CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Your external stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       TOP INFO BAR
+       A thin bar above the main header showing quick contact info
+  ============================================================ -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <span><i class="fa-solid fa-clock"></i> Mon – Sun: 9:00 AM – 8:00 PM</span>
+      <span><i class="fa-solid fa-phone"></i> 0891 6677222</span>
+      <span><i class="fa-solid fa-location-dot"></i> Pedda Waltair, Visakhapatnam – 530003</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       Logo on the left, nav links on the right, sticky on scroll
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo / Brand Name -->
+      <a href="#home" class="logo">
+        <img src="assets/logo.png" alt="Vivekananda Diagnostics Logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Vivekananda Diagnostics</span>
+          <span class="logo-sub">& Medical Research</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="#home"         class="nav-link">Home</a></li>
+          <li><a href="#about"        class="nav-link">About</a></li>
+          <li><a href="#services"     class="nav-link">Services</a></li>
+          <li><a href="#packages"     class="nav-link">Packages</a></li>
+          <li><a href="#appointment"  class="nav-link">Appointment</a></li>
+          <li><a href="#gallery"      class="nav-link">Gallery</a></li>
+          <li><a href="#contact"      class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call-to-Action Button (desktop) -->
+      <a href="#appointment" class="btn btn-coral header-cta">Book Appointment</a>
+
+      <!-- Hamburger icon for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HOME / HERO SECTION
+       Big headline, sub-text, two CTA buttons, trust badges
+  ============================================================ -->
+  <section class="hero" id="home">
+    <!-- Background image placed via CSS, but we add an overlay div here -->
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-tagline">Trusted Diagnostics in Visakhapatnam</p>
+        <h1 class="hero-heading">Your Health,<br />Our <span class="highlight">Priority</span></h1>
+        <p class="hero-sub">
+          Advanced diagnostics. Compassionate care. Accurate results.<br />
+          All your tests under one roof — from MRI to Pathology.
+        </p>
+        <div class="hero-buttons">
+          <a href="#appointment" class="btn btn-coral">Book Appointment</a>
+          <a href="#services"    class="btn btn-outline-white">View Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust badges strip at the bottom of the hero -->
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-badge"><i class="fa-solid fa-microscope"></i><span>12+ Services</span></div>
+        <div class="trust-badge"><i class="fa-solid fa-user-doctor"></i><span>Expert Team</span></div>
+        <div class="trust-badge"><i class="fa-solid fa-hospital"></i><span>Modern Equipment</span></div>
+        <div class="trust-badge"><i class="fa-solid fa-file-medical"></i><span>Same-Day Reports</span></div>
+        <div class="trust-badge"><i class="fa-solid fa-clock"></i><span>Open 9 AM – 8 PM</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT US SECTION
+       Mission, highlights, opening hours
+  ============================================================ -->
+  <section class="section about-section" id="about">
+    <div class="container about-inner">
+
+      <!-- Left column: image -->
+      <div class="about-image">
+        <img src="assets/about.jpg" alt="Vivekananda Diagnostics facility" />
+        <!-- Opening hours card overlaid on the image -->
+        <div class="hours-card">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <strong>Opening Hours</strong>
+            <span>Monday – Sunday</span>
+            <span>9:00 AM – 8:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: text content -->
+      <div class="about-content">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">About Vivekananda Diagnostics</h2>
+        <p class="about-text">
+          Vivekananda Diagnostics and Medical Research is a trusted, full-service diagnostic
+          center located in the heart of Pedda Waltair, Visakhapatnam. We are committed to
+          delivering accurate, timely, and affordable diagnostic services to every patient
+          who walks through our doors.
+        </p>
+        <p class="about-text">
+          With state-of-the-art equipment, a team of qualified medical professionals, and
+          a patient-centered approach, we offer everything from advanced MRI scans to routine
+          blood tests — all under one roof.
+        </p>
+
+        <!-- Highlight boxes -->
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <i class="fa-solid fa-stethoscope"></i>
+            <div>
+              <strong>State-of-the-Art Equipment</strong>
+              <span>Latest diagnostic technology for accurate results</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-user-doctor"></i>
+            <div>
+              <strong>Qualified Professionals</strong>
+              <span>Experienced doctors and technicians</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-file-medical"></i>
+            <div>
+              <strong>Accurate & Timely Reports</strong>
+              <span>Reliable results delivered quickly</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <div>
+              <strong>Patient-Centered Care</strong>
+              <span>Your comfort and health come first</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#appointment" class="btn btn-coral">Book an Appointment</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES / TESTS OFFERED SECTION
+       12 service cards in a responsive grid
+  ============================================================ -->
+  <section class="section services-section" id="services">
+    <div class="container">
+
+      <!-- Section heading -->
+      <div class="section-header">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive diagnostic solutions under one roof</p>
+      </div>
+
+      <!-- Services grid: each card has an icon, title, and short description -->
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
+          <h3>Dental</h3>
+          <p>Complete dental check-up, consultation, and treatment by qualified dentists.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-bed-pulse"></i></div>
+          <h3>Day Care</h3>
+          <p>Short-stay observation, minor procedures, and same-day discharge facility.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-magnet"></i></div>
+          <h3>MRI</h3>
+          <p>High-resolution magnetic resonance imaging for brain, spine, and joints.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-baby"></i></div>
+          <h3>Ultrasound</h3>
+          <p>Safe, real-time internal body imaging including abdomen and obstetric scans.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-radiation"></i></div>
+          <h3>X-Ray</h3>
+          <p>Quick digital radiography for chest, bones, and all standard X-ray needs.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-door-open"></i></div>
+          <h3>OP Chambers</h3>
+          <p>Outpatient consultation rooms with specialist doctors across departments.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-pills"></i></div>
+          <h3>Pharmacy</h3>
+          <p>In-house pharmacy stocking medicines, dispensing prescriptions reliably.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3>Pathology Lab</h3>
+          <p>Blood tests, urine analysis, cultures, biopsies, and all lab investigations.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-person-walking"></i></div>
+          <h3>Physiotherapy</h3>
+          <p>Rehabilitation, pain management, and recovery for injuries and chronic conditions.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-person-running"></i></div>
+          <h3>TMT</h3>
+          <p>Treadmill cardiac stress test to evaluate heart health under exercise conditions.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Echo</h3>
+          <p>Echocardiography for detailed imaging of the heart's structure and function.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-wave-square"></i></div>
+          <h3>ECG</h3>
+          <p>Electrocardiogram to record heart rhythm and detect cardiac abnormalities.</p>
+        </div>
+
+      </div><!-- end .services-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HEALTH PACKAGES SECTION
+       Currently one package: Full Body Checkup
+  ============================================================ -->
+  <section class="section packages-section" id="packages">
+    <div class="container">
+
+      <!-- Section heading -->
+      <div class="section-header">
+        <p class="section-label">Save on Health</p>
+        <h2 class="section-title">Health Packages</h2>
+        <p class="section-subtitle">Invest in your health today with our affordable checkup packages</p>
+      </div>
+
+      <!-- Package cards row -->
+      <div class="packages-grid">
+
+        <!-- Full Body Checkup Package Card -->
+        <div class="package-card featured">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-icon"><i class="fa-solid fa-kit-medical"></i></div>
+          <h3 class="package-name">Full Body Checkup</h3>
+          <div class="package-price">
+            <span class="currency">₹</span>3,000
+          </div>
+          <ul class="package-includes">
+            <li><i class="fa-solid fa-check"></i> Complete Blood Count (CBC)</li>
+            <li><i class="fa-solid fa-check"></i> Urine Routine Analysis</li>
+            <li><i class="fa-solid fa-check"></i> Chest X-Ray</li>
+            <li><i class="fa-solid fa-check"></i> ECG</li>
+            <li><i class="fa-solid fa-check"></i> Ultrasound Abdomen</li>
+            <li><i class="fa-solid fa-check"></i> Blood Sugar (Fasting)</li>
+            <li><i class="fa-solid fa-check"></i> Lipid Profile</li>
+            <li><i class="fa-solid fa-check"></i> Doctor Consultation</li>
+          </ul>
+          <a href="#appointment" class="btn btn-coral">Book This Package</a>
+        </div>
+
+      </div><!-- end .packages-grid -->
+
+      <!-- Custom package note -->
+      <p class="packages-note">
+        <i class="fa-solid fa-circle-info"></i>
+        Custom packages available. <a href="tel:08916677222">Call us</a> for personalized plans.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       APPOINTMENT / CONTACT FORM SECTION
+       Left side: contact info | Right side: booking form
+  ============================================================ -->
+  <section class="section appointment-section" id="appointment">
+    <div class="container appointment-inner">
+
+      <!-- Left: contact details -->
+      <div class="appointment-info">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Book an Appointment</h2>
+        <p class="appointment-desc">
+          Fill in the form and our team will confirm your appointment shortly.
+          Walk-ins are also welcome during working hours.
+        </p>
+
+        <div class="contact-details">
+
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Address</strong>
+              <span>Opp. 3 Town Police Station, Pedda Waltair,<br />Visakhapatnam – 530003</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:08916677222">0891 6677222</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Opening Hours</strong>
+              <span>Monday – Sunday: 9:00 AM – 8:00 PM</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp</strong>
+              <!-- Replace 91XXXXXXXXXX with your actual WhatsApp number -->
+              <a href="https://wa.me/918916677222" target="_blank">Chat with us on WhatsApp</a>
+            </div>
+          </div>
+
+        </div><!-- end .contact-details -->
+      </div>
+
+      <!-- Right: appointment form -->
+      <div class="appointment-form-wrap">
+        <form class="appointment-form" id="appointment-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="full-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="full-name" name="full-name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="Your mobile number" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="optional">(optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service / Test Required <span class="required">*</span></label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>-- Select a Service --</option>
+              <option value="dental">Dental</option>
+              <option value="daycare">Day Care</option>
+              <option value="mri">MRI</option>
+              <option value="ultrasound">Ultrasound</option>
+              <option value="xray">X-Ray</option>
+              <option value="op-chambers">OP Chambers</option>
+              <option value="pharmacy">Pharmacy</option>
+              <option value="pathology">Pathology Lab</option>
+              <option value="physiotherapy">Physiotherapy</option>
+              <option value="tmt">TMT</option>
+              <option value="echo">Echo</option>
+              <option value="ecg">ECG</option>
+              <option value="full-body">Full Body Checkup Package</option>
+              <option value="other">Other / Not Listed</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="appt-date">Preferred Date <span class="required">*</span></label>
+            <input type="date" id="appt-date" name="appt-date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message / Notes <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Any specific tests, symptoms, or questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-coral btn-full">
+            <i class="fa-solid fa-calendar-check"></i> Request Appointment
+          </button>
+
+          <!-- Success message shown by JavaScript after form submit -->
+          <div class="form-success" id="form-success" style="display:none;">
+            <i class="fa-solid fa-circle-check"></i>
+            Thank you! We'll call you to confirm your appointment shortly.
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       LOCATION / MAP SECTION
+       Embedded Google Map + address + directions button
+  ============================================================ -->
+  <section class="section location-section" id="location">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-label">Where to Find Us</p>
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-subtitle">
+          Conveniently located opposite 3 Town Police Station, Pedda Waltair, Visakhapatnam
+        </p>
+      </div>
+
+      <!-- Google Map Embed -->
+      <!-- HOW TO UPDATE THIS MAP:
+           1. Go to maps.google.com
+           2. Search for your exact address
+           3. Click Share → Embed a map → Copy the iframe code
+           4. Replace the iframe below with your copied code
+      -->
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.4!2d83.3167!3d17.7231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQzJzIzLjIiTiA4M8KwMTknMDAuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Vivekananda Diagnostics Location Map">
+        </iframe>
+      </div>
+
+      <!-- Directions button -->
+      <div class="map-cta">
+        <a
+          href="https://www.google.com/maps/search/Vivekananda+Diagnostics+Pedda+Waltair+Visakhapatnam"
+          target="_blank"
+          class="btn btn-coral">
+          <i class="fa-solid fa-diamond-turn-right"></i> Get Directions on Google Maps
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       Patient reviews / feedback cards
+  ============================================================ -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-label">Patient Feedback</p>
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle">Real experiences from real patients</p>
+      </div>
+
+      <!-- Testimonial cards grid -->
+      <!-- TIP: Replace these sample quotes with real patient feedback -->
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Got my MRI done here and the entire process was smooth and comfortable.
+            The staff was courteous and the report was ready the same day. Highly recommend!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div>
+              <strong>Ravi K.</strong>
+              <span>MRI Scan Patient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "We did a full body checkup for my parents and the value for money is excellent.
+            The doctors were thorough and explained everything patiently. Great center!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <strong>Priya M.</strong>
+              <span>Full Body Checkup</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p class="testimonial-text">
+            "Pathology lab results were accurate and came quickly. The center is clean
+            and well-maintained. The staff made my elderly mother feel very comfortable."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <strong>Suresh R.</strong>
+              <span>Pathology Lab Patient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "The physiotherapy sessions here made a huge difference in my recovery after
+            a knee injury. The therapist was skilled and genuinely caring. 5 stars!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <strong>Ananya D.</strong>
+              <span>Physiotherapy Patient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Had an Echo and ECG done here. The technicians were professional and the
+            equipment is clearly modern. Reports were detailed and the doctor explained everything."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">V</div>
+            <div>
+              <strong>Venkat N.</strong>
+              <span>Echo & ECG Patient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "The dental team here is wonderful. Very gentle with kids and thorough
+            with the checkup. Convenient location near the police station, easy to find."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">L</div>
+            <div>
+              <strong>Lakshmi P.</strong>
+              <span>Dental Patient</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end .testimonials-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GALLERY SECTION
+       Photo grid with lightbox (JS-powered click-to-enlarge)
+  ============================================================ -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-label">Inside Our Center</p>
+        <h2 class="section-title">Our Facility</h2>
+        <p class="section-subtitle">
+          A look inside our state-of-the-art diagnostic center
+        </p>
+      </div>
+
+      <!-- Gallery grid -->
+      <!-- TIP: Replace assets/gallery/photo1.jpg etc. with your real photos -->
+      <div class="gallery-grid" id="gallery-grid">
+
+        <div class="gallery-item" data-img="assets/gallery/photo1.jpg" data-caption="Reception Area">
+          <img src="assets/gallery/photo1.jpg" alt="Reception Area" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Reception Area</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo2.jpg" data-caption="MRI Room">
+          <img src="assets/gallery/photo2.jpg" alt="MRI Room" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>MRI Room</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo3.jpg" data-caption="Pathology Lab">
+          <img src="assets/gallery/photo3.jpg" alt="Pathology Lab" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Pathology Lab</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo4.jpg" data-caption="Pharmacy">
+          <img src="assets/gallery/photo4.jpg" alt="Pharmacy" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Pharmacy</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo5.jpg" data-caption="Consultation Room">
+          <img src="assets/gallery/photo5.jpg" alt="Consultation Room" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Consultation Room</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo6.jpg" data-caption="Physiotherapy Room">
+          <img src="assets/gallery/photo6.jpg" alt="Physiotherapy Room" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Physiotherapy Room</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo7.jpg" data-caption="Ultrasound Suite">
+          <img src="assets/gallery/photo7.jpg" alt="Ultrasound Suite" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Ultrasound Suite</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo8.jpg" data-caption="X-Ray Room">
+          <img src="assets/gallery/photo8.jpg" alt="X-Ray Room" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>X-Ray Room</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-img="assets/gallery/photo9.jpg" data-caption="Dental Clinic">
+          <img src="assets/gallery/photo9.jpg" alt="Dental Clinic" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Dental Clinic</span>
+          </div>
+        </div>
+
+      </div><!-- end .gallery-grid -->
+
+    </div><!-- end .container -->
+
+    <!-- ---- Lightbox overlay (hidden by default, shown by script.js) ---- -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" id="lightbox-img" />
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+      <button class="lightbox-next" id="lightbox-next" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       4-column layout: About | Quick Links | Contact | Social
+  ============================================================ -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+
+      <!-- Column 1: About blurb + logo -->
+      <div class="footer-col footer-about">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="Vivekananda Diagnostics Logo" />
+          <span>Vivekananda Diagnostics<br />&amp; Medical Research</span>
+        </div>
+        <p>
+          A trusted, full-service diagnostic center in Visakhapatnam, committed to
+          accurate, affordable, and compassionate healthcare for every patient.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick navigation links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Health Packages</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact details -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Opp. 3 Town Police Station, Pedda Waltair, Visakhapatnam – 530003</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:08916677222">0891 6677222</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon – Sun: 9:00 AM – 8:00 PM</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Social / WhatsApp -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Connect With Us</h4>
+        <a href="https://wa.me/918916677222" class="btn btn-whatsapp footer-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
+        <div class="social-icons">
+          <!-- Replace # with your actual social media profile URLs -->
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div><!-- end .footer-grid -->
+
+    <!-- Bottom copyright bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          &copy; 2025 Vivekananda Diagnostics and Medical Research. All rights reserved.
+          &nbsp;|&nbsp; Visakhapatnam, Andhra Pradesh, India
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- ============================================================
+       FLOATING PHONE & WHATSAPP BUTTONS
+       Always visible in the bottom-right corner while scrolling
+  ============================================================ -->
+  <div class="floating-buttons">
+    <!-- Phone call button -->
+    <a href="tel:08916677222" class="float-btn float-call" aria-label="Call us">
+      <i class="fa-solid fa-phone"></i>
+      <span class="float-label">Call Now</span>
+    </a>
+    <!-- WhatsApp chat button -->
+    <a href="https://wa.me/918916677222" class="float-btn float-whatsapp" target="_blank" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="float-label">WhatsApp</span>
+    </a>
+  </div>
+
+
+  <!-- ============================================================
+       SCROLL TO TOP BUTTON
+       Appears after user scrolls down; managed by script.js
+  ============================================================ -->
+  <button class="scroll-top" id="scroll-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+  <!-- ============================================================
+       JAVASCRIPT FILE LINK (always at the bottom of body)
+  ============================================================ -->
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1816 @@
+/* ================================================================
+   STYLES.CSS — Vivekananda Diagnostics and Medical Research
+   Clean, professional, mobile-friendly medical theme
+   ================================================================ */
+
+
+/* ================================================================
+   1. CSS VARIABLES (Color Palette & Fonts)
+      Change these values to update colors site-wide
+   ================================================================ */
+:root {
+  /* Brand Colors */
+  --teal:         #1FA39A;   /* Main teal green */
+  --teal-dark:    #0F6F73;   /* Deeper teal for accents, footer */
+  --teal-light:   #d4f0ee;   /* Very light teal for backgrounds */
+  --coral:        #F26A4B;   /* Coral orange — buttons & highlights */
+  --coral-light:  #F58A6C;   /* Lighter coral for gradients */
+  --white:        #FFFFFF;
+  --off-white:    #F7FAFA;   /* Soft background for alternate sections */
+  --gray-light:   #EFF3F3;   /* Card backgrounds */
+  --gray-mid:     #B0C4C4;   /* Borders */
+  --gray-text:    #5A7070;   /* Muted body text */
+  --dark:         #1A2E2E;   /* Headings, dark text */
+  --whatsapp:     #25D366;   /* WhatsApp green */
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body:    'Lato', sans-serif;
+
+  /* Spacing */
+  --section-pad:  80px;
+  --radius:       12px;
+  --radius-sm:    8px;
+  --radius-lg:    20px;
+
+  /* Shadows */
+  --shadow-sm:    0 2px 8px rgba(15, 111, 115, 0.10);
+  --shadow-md:    0 6px 24px rgba(15, 111, 115, 0.14);
+  --shadow-lg:    0 16px 48px rgba(15, 111, 115, 0.18);
+
+  /* Transitions */
+  --transition:   all 0.28s ease;
+}
+
+
+/* ================================================================
+   2. RESET & BASE STYLES
+      Remove default browser styles, set box-sizing
+   ================================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;        /* Smooth scrolling when nav links are clicked */
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background-color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;             /* Prevent horizontal scrollbar */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utility: container centers content and adds side padding */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ================================================================
+   3. TYPOGRAPHY — Headings, Labels, Subtitles
+   ================================================================ */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--dark);
+}
+
+/* Section label — small teal text above headings */
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Section title — main heading for each section */
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+/* Section subtitle — light description below heading */
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--gray-text);
+  max-width: 560px;
+}
+
+/* Section header block — centers the heading group */
+.section-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.section-header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* Generic section padding */
+.section {
+  padding: var(--section-pad) 0;
+}
+
+
+/* ================================================================
+   4. BUTTONS
+      .btn-coral = coral filled
+      .btn-outline-white = white outline (for dark backgrounds)
+      .btn-whatsapp = WhatsApp green
+      .btn-full = full width
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 50px;            /* Pill-shaped buttons */
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+/* Filled coral/orange button */
+.btn-coral {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+}
+
+.btn-coral:hover {
+  background: #d9563a;
+  border-color: #d9563a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(242, 106, 75, 0.35);
+}
+
+/* Outline white button (used on hero dark bg) */
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+}
+
+/* WhatsApp green button */
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: var(--white);
+  border-color: var(--whatsapp);
+}
+
+.btn-whatsapp:hover {
+  background: #1fad55;
+  border-color: #1fad55;
+  transform: translateY(-2px);
+}
+
+/* Full-width button */
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+
+/* ================================================================
+   5. TOP INFO BAR
+      Thin strip above header with phone, hours, address
+   ================================================================ */
+.top-bar {
+  background: var(--teal-dark);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.8rem;
+  padding: 7px 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.top-bar span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-bar i {
+  color: var(--coral-light);
+  font-size: 0.75rem;
+}
+
+
+/* ================================================================
+   6. HEADER / NAVIGATION
+      Sticky header, logo, nav links, hamburger for mobile
+   ================================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 2px 16px rgba(15, 111, 115, 0.10);
+  transition: var(--transition);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 16px;
+}
+
+/* Logo area */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-main {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.logo-sub {
+  font-size: 0.72rem;
+  color: var(--gray-text);
+  font-weight: 400;
+}
+
+/* Desktop nav */
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: var(--dark);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--teal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 60%;
+}
+
+/* Header CTA button */
+.header-cta {
+  flex-shrink: 0;
+  padding: 9px 20px;
+  font-size: 0.83rem;
+}
+
+/* Hamburger button (hidden on desktop, shown on mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 2.5px;
+  background: var(--teal-dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Animate hamburger to X when menu is open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8.75px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8.75px) rotate(-45deg);
+}
+
+
+/* ================================================================
+   7. HERO / HOME SECTION
+      Full-height banner with background image, overlay, text
+   ================================================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(135deg, rgba(15, 111, 115, 0.88) 0%, rgba(31, 163, 154, 0.72) 60%, rgba(242, 106, 75, 0.30) 100%),
+    url('assets/hero.jpg') center center / cover no-repeat;
+  color: var(--white);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(15,111,115,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Hero content area */
+.hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero-tagline {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral-light);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-tagline::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 2px;
+  background: var(--coral-light);
+  border-radius: 2px;
+}
+
+.hero-heading {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-heading .highlight {
+  color: var(--coral-light);
+  position: relative;
+}
+
+.hero-sub {
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Trust badges strip */
+.trust-strip {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 28px;
+  border-right: 1px solid rgba(255,255,255,0.20);
+}
+
+.trust-badge:last-child {
+  border-right: none;
+}
+
+.trust-badge i {
+  color: var(--coral-light);
+  font-size: 1.1rem;
+}
+
+
+/* ================================================================
+   8. ABOUT US SECTION
+      Two-column: image (left) + content (right)
+   ================================================================ */
+.about-section {
+  background: var(--white);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Left: image with hours card overlay */
+.about-image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible;
+}
+
+.about-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Floating hours card on the image */
+.hours-card {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 220px;
+  border-left: 4px solid var(--coral);
+}
+
+.hours-card i {
+  font-size: 1.6rem;
+  color: var(--teal);
+}
+
+.hours-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hours-card strong {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hours-card span {
+  font-size: 0.82rem;
+  color: var(--gray-text);
+}
+
+/* Right: text content */
+.about-text {
+  color: var(--gray-text);
+  margin-bottom: 16px;
+  font-size: 0.97rem;
+}
+
+/* Highlight items grid */
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 28px 0 32px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--off-white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--teal-light);
+  transition: var(--transition);
+}
+
+.highlight-item:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--teal);
+}
+
+.highlight-item i {
+  font-size: 1.25rem;
+  color: var(--teal);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.highlight-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.highlight-item strong {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.highlight-item span {
+  font-size: 0.78rem;
+  color: var(--gray-text);
+}
+
+
+/* ================================================================
+   9. SERVICES SECTION
+      12 cards in a 4-column responsive grid
+   ================================================================ */
+.services-section {
+  background: var(--off-white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid var(--gray-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal-light);
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--teal-light), #b8e8e6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+}
+
+.service-icon i {
+  font-size: 1.4rem;
+  color: var(--teal-dark);
+  transition: var(--transition);
+}
+
+.service-card:hover .service-icon i {
+  color: var(--white);
+}
+
+.service-card h3 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.82rem;
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+
+/* ================================================================
+   10. HEALTH PACKAGES SECTION
+       Featured package card with price and includes list
+   ================================================================ */
+.packages-section {
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+  color: var(--white);
+}
+
+.packages-section .section-label {
+  color: var(--coral-light);
+}
+
+.packages-section .section-title {
+  color: var(--white);
+}
+
+.packages-section .section-subtitle {
+  color: rgba(255,255,255,0.78);
+}
+
+.packages-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Package card */
+.package-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+}
+
+/* "Most Popular" badge */
+.package-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--coral);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.package-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--teal-light), #b8e8e6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.package-icon i {
+  font-size: 1.8rem;
+  color: var(--teal-dark);
+}
+
+.package-name {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+/* Price display */
+.package-price {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--teal-dark);
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.package-price .currency {
+  font-size: 1.6rem;
+  vertical-align: super;
+  font-weight: 700;
+}
+
+/* What's included list */
+.package-includes {
+  text-align: left;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.package-includes li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.package-includes li i {
+  color: var(--teal);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Note below packages */
+.packages-note {
+  text-align: center;
+  margin-top: 32px;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.packages-note a {
+  color: var(--coral-light);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.packages-note i {
+  color: var(--coral-light);
+}
+
+
+/* ================================================================
+   11. APPOINTMENT / CONTACT FORM SECTION
+       Two-column: info left, form right
+   ================================================================ */
+.appointment-section {
+  background: var(--white);
+}
+
+.appointment-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.appointment-desc {
+  color: var(--gray-text);
+  margin: 12px 0 28px;
+  font-size: 0.97rem;
+}
+
+/* Contact detail items */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--off-white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--teal-light);
+}
+
+.contact-item i {
+  font-size: 1.2rem;
+  color: var(--teal);
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 22px;
+  text-align: center;
+}
+
+.contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-item strong {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal-dark);
+}
+
+.contact-item span,
+.contact-item a {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+}
+
+.contact-item a:hover {
+  color: var(--teal);
+}
+
+/* --- Appointment Form --- */
+.appointment-form-wrap {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-light);
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Two fields side by side */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-heading);
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.required {
+  color: var(--coral);
+}
+
+.optional {
+  color: var(--gray-text);
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+
+/* All form inputs, selects, textareas share these styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--dark);
+  background: var(--off-white);
+  border: 1.5px solid var(--gray-mid);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  transition: var(--transition);
+  outline: none;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Highlight input when focused */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(31, 163, 154, 0.12);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Custom dropdown arrow */
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231FA39A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Success message shown after form submit */
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #e8f8f0;
+  border: 1.5px solid #52c987;
+  color: #1a7a45;
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.form-success i {
+  font-size: 1.3rem;
+  color: #52c987;
+}
+
+
+/* ================================================================
+   12. LOCATION / MAP SECTION
+   ================================================================ */
+.location-section {
+  background: var(--off-white);
+}
+
+/* Map container — responsive and rounded */
+.map-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-light);
+  line-height: 0;          /* Removes gap below iframe */
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  display: block;
+}
+
+.map-cta {
+  text-align: center;
+  margin-top: 28px;
+}
+
+
+/* ================================================================
+   13. TESTIMONIALS SECTION
+       6 review cards in a 3-column grid
+   ================================================================ */
+.testimonials-section {
+  background: linear-gradient(180deg, var(--teal-light) 0%, var(--white) 100%);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  border: 1px solid var(--gray-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal-light);
+}
+
+/* Opening quote decoration */
+.testimonial-card::before {
+  content: '\201C';           /* " character */
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  color: var(--teal-light);
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  line-height: 1;
+}
+
+/* Star rating row */
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.testimonial-stars i {
+  color: #f5a623;
+  font-size: 0.88rem;
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  line-height: 1.75;
+  flex: 1;
+  padding-top: 8px;         /* Space below the large quote mark */
+}
+
+/* Author row: avatar + name + service */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-light);
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.testimonial-author strong {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark);
+  display: block;
+}
+
+.testimonial-author span {
+  font-size: 0.78rem;
+  color: var(--teal);
+}
+
+
+/* ================================================================
+   14. GALLERY SECTION
+       3-column photo grid with hover overlay and lightbox
+   ================================================================ */
+.gallery-section {
+  background: var(--dark);
+}
+
+.gallery-section .section-label {
+  color: var(--coral-light);
+}
+
+.gallery-section .section-title {
+  color: var(--white);
+}
+
+.gallery-section .section-subtitle {
+  color: rgba(255,255,255,0.62);
+}
+
+/* 3x3 grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;       /* Consistent card proportions */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+  /* Grey placeholder for missing photos */
+  background: #2a3f3f;
+  min-height: 180px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Hover overlay with icon and caption */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,111,115,0.85) 0%, rgba(15,111,115,0.20) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay i {
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.gallery-overlay span {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+  padding: 0 12px;
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 9999;
+  display: none;              /* script.js changes this to flex */
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img-wrap {
+  max-width: 88vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-img-wrap img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Lightbox navigation buttons */
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.lightbox-close { top: 20px; right: 20px; }
+.lightbox-prev  { left: 20px; top: 50%; transform: translateY(-50%); }
+.lightbox-next  { right: 20px; top: 50%; transform: translateY(-50%); }
+
+
+/* ================================================================
+   15. FOOTER
+       4-column grid on desktop, stack on mobile
+   ================================================================ */
+.site-footer {
+  background: var(--teal-dark);
+  color: rgba(255,255,255,0.82);
+  padding-top: 64px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1.1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+/* Column shared styles */
+.footer-col {}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--white);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+
+/* About column */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-logo img {
+  height: 44px;
+  border-radius: 6px;
+}
+
+.footer-logo span {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.35;
+}
+
+.footer-about p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+/* Quick links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a::before {
+  content: '›';
+  color: var(--coral-light);
+  font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+  padding-left: 4px;
+}
+
+/* Contact list */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.footer-contact-list li i {
+  color: var(--coral-light);
+  font-size: 0.9rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+}
+
+.footer-contact-list a:hover {
+  color: var(--white);
+}
+
+/* WhatsApp button in footer */
+.footer-wa {
+  margin-bottom: 24px;
+  padding: 10px 20px;
+  font-size: 0.88rem;
+}
+
+/* Social media icon row */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.social-icon:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+  background: rgba(0,0,0,0.20);
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.footer-bottom p {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+}
+
+
+/* ================================================================
+   16. FLOATING CALL & WHATSAPP BUTTONS
+       Fixed bottom-right, always visible while scrolling
+   ================================================================ */
+.floating-buttons {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  transition: var(--transition);
+}
+
+.float-btn:hover {
+  transform: translateX(-4px) scale(1.04);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.30);
+}
+
+.float-btn i {
+  font-size: 1.1rem;
+}
+
+.float-call {
+  background: var(--teal);
+}
+
+.float-call:hover {
+  background: var(--teal-dark);
+}
+
+.float-whatsapp {
+  background: var(--whatsapp);
+}
+
+.float-whatsapp:hover {
+  background: #1fad55;
+}
+
+.float-label {
+  display: inline;
+}
+
+
+/* ================================================================
+   17. SCROLL TO TOP BUTTON
+       Round button, hidden until user scrolls; shown by script.js
+   ================================================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  background: var(--teal-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top:hover {
+  background: var(--coral);
+}
+
+
+/* ================================================================
+   18. RESPONSIVE — TABLET  (max-width: 1024px)
+   ================================================================ */
+@media (max-width: 1024px) {
+
+  /* Services: 3 columns instead of 4 */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* About: stack vertically */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-image img {
+    height: 360px;
+  }
+
+  .hours-card {
+    right: 0;
+    bottom: -20px;
+  }
+
+  /* Footer: 2 columns */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  /* Testimonials: 2 columns */
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================================================================
+   19. RESPONSIVE — MOBILE  (max-width: 768px)
+   ================================================================ */
+@media (max-width: 768px) {
+
+  :root {
+    --section-pad: 56px;
+  }
+
+  /* --- Top bar: smaller, centered --- */
+  .top-bar-inner {
+    gap: 12px;
+    font-size: 0.72rem;
+    justify-content: center;
+  }
+
+  /* --- Header: show hamburger, hide desktop nav & CTA --- */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    padding: 16px 0;
+    z-index: 999;
+  }
+
+  /* Show nav when menu is open (toggled by script.js) */
+  .main-nav.open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 24px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 0.95rem;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .trust-inner {
+    gap: 0;
+  }
+
+  .trust-badge {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    width: 50%;
+    justify-content: center;
+  }
+
+  .trust-badge:nth-child(5) {
+    width: 100%;
+    border-bottom: none;
+  }
+
+  /* --- About --- */
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .hours-card {
+    position: static;
+    margin-top: 16px;
+  }
+
+  /* --- Services: 2 columns --- */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* --- Packages --- */
+  .package-card {
+    padding: 36px 24px;
+  }
+
+  /* --- Appointment: stack --- */
+  .appointment-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .appointment-form-wrap {
+    padding: 28px 20px;
+  }
+
+  /* Form row: single column */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Map --- */
+  .map-wrapper iframe {
+    height: 300px;
+  }
+
+  /* --- Testimonials: single column --- */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Gallery: 2 columns --- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* --- Footer: single column --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* --- Floating buttons: show only icons (hide labels) --- */
+  .float-label {
+    display: none;
+  }
+
+  .float-btn {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .floating-buttons {
+    bottom: 20px;
+    right: 16px;
+  }
+
+  .scroll-top {
+    bottom: 20px;
+    left: 16px;
+  }
+
+  /* Lightbox prev/next smaller on mobile */
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+}
+
+
+/* ================================================================
+   20. RESPONSIVE — SMALL MOBILE  (max-width: 480px)
+   ================================================================ */
+@media (max-width: 480px) {
+
+  /* Services: single column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery: single column */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-heading {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  /* Top bar: hide address on very small screens */
+  .top-bar-inner span:last-child {
+    display: none;
+  }
+}
